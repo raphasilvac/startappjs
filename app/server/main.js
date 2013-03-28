@@ -1,8 +1,14 @@
 'use strict';
 
-var app = require('express')()
+var express = require('express')
+  , app = express()
   , server = require('http').createServer(app)
   , io = require('socket.io').listen(server);
+
+app.use("/css", express.static('./app/css'));
+app.use("/client", express.static('./app/client'));
+app.use("/templates", express.static('./app/templates'));
+app.use("/components", express.static('./app/components'));
 
 app.get('/', function (req, res) {
   res.sendfile('./app/index.html');

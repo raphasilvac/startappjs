@@ -1,8 +1,23 @@
-<html>
-
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
 <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
 
-	<script src="/socket.io/socket.io.js"></script>
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+    <link rel="stylesheet" href="components/bootstrap/docs/assets/css/bootstrap.css">
+    <link rel="stylesheet" href="components/bootstrap/docs/assets/css/bootstrap-responsive.css">
+    <link rel="stylesheet" href="css/main.css">
+
+    <!-- build:js -->
+    <script src="/socket.io/socket.io.js"></script>
 	<script>
 	  var socket = io.connect('http://localhost:9001');
 	  socket.on('news', function (data) {
@@ -10,11 +25,74 @@
 		socket.emit('my other event', { my: 'data' });
 	  });
 	</script>
-
+    <script src="components/modernizr/modernizr.js"></script>
+    <!-- endbuild -->
 </head>
-
 <body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="brand" href="#/test">Project name</a>
+          <div class="nav-collapse collapse">
+            <ul class="nav">
+              <li><a href="#/home">Management</a></li>
+              <li><a href="#/about">About</a></li>
+              <li><a href="#/contact">Contact</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
 
+    <div class="container text-right">
+      <ul class="inline">
+        <li><a href="">Processes</a></li>
+        <li><a href="">Submodule two</a></li>
+        <li><a href="">Submodule three</a></li>
+        <li><a href="">Submodule four</a></li>
+      </ul>
+    </div>
+
+    <div class="container">
+      <ul class="breadcrumb">
+        <li><a href="#">Management</a> <span class="divider">/</span></li>
+        <li><a href="#">Processes</a> <span class="divider">/</span></li>
+        <li class="active">Swot Analyse</li>
+      </ul>
+    </div>
+
+    <div class="container">
+      <div class="tabbable"> <!-- Only required for left/right tabs -->
+        <ul class="nav nav-tabs">
+          <li class="active"><a href="#tab1" data-toggle="tab">Swot Analyse</a></li>
+        </ul>
+        <div class="tab-content">
+          <div class="tab-pane active" id="tab1">
+            <div class="container" id="main"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--[if lt IE 7]>
+        <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+    <![endif]-->
+
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+    <script>
+        var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+        (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+        g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+        s.parentNode.insertBefore(g,s)}(document,'script'));
+    </script>
+
+    <!-- build:js scripts/main.js -->
+    <script data-main="client/main" src="components/requirejs/require.js"></script>
+    <!-- endbuild -->
 </body>
-
 </html>
