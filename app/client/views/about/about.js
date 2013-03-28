@@ -5,10 +5,16 @@ define(['text!templates/about/about.html'], function(template) {
   	el: $("#main"),
 
     initialize: function() {
-      console.log('AboutView');
-      
-      this.$el.html(template);
+      this.render();
+    },
+
+    render: function() {
+    	var variables = { user_name: "Guilherme" };
+    	var renderedTemplate = _.template(template, variables);
+
+    	this.$el.html(renderedTemplate);
     }
+
   });
 
   return AboutView;
