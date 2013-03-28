@@ -24,4 +24,4 @@ bower install
 grunt
 ```
 
-After you can access http://localhost:9001
+After this you can access http://localhost:9001
